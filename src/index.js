@@ -1,26 +1,23 @@
 import './style.css';
+import { lists, createList, createListItem } from './list';
+import { createListDOM, createListItemDOM, createListFormDOM, createListItemFormDOM, createSideBarDOM } from './listDOM';
 
-const list = (title) => {
-    const items = [];
-    const addItem = (item) => {items.push(item)};
-    const removeItem = (item) => items.splice(getIndex(item), 1);
+const list1 = createList('Saturday list');
+const list2 = createList('Sunday list');
 
-    const getItem = (index) => { return items[index] };
-    const getItems = () => { return items };
-    const getIndex = (item) => {
-        for (let i = 0; i < items.length; i++) {
-            if (items[i].title == item) {
-                return i;
-            }
-            return "Item not found";
-        }
-    }
-    return { title, addItem, removeItem, getItem, getItems, getIndex};
-};
+const listItem1 = createListItem('Task 1', "description", "due date", "priority");
+const listItem2 = createListItem('Task 2', "description", "due date", "priority");
 
-const listItem = (title, description, dueDate, priority) => {
-    let complete = false;
-    return { title, description, dueDate, priority, complete };
-}
+list1.addItem(listItem1);
+list1.addItem(listItem2);
 
-const task = listItem("Title", "Desc", "DueDate", "Priority");
+lists.addList(list1);
+lists.addList(list2);
+
+const sidebar = createSideBarDOM();
+
+document.body.append(sidebar);
+
+const listDOM1 = createListDOM(list1);
+
+document.body.append(listDOM1);

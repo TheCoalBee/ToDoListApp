@@ -1,0 +1,220 @@
+* {
+    padding: 0;
+    margin:0;
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight:lighter;
+}
+
+/* CONTENT */
+body {
+    display:flex;
+}
+
+/* SIDEBAR */
+#sidebar {
+    height:calc(100vh - 100px);
+    margin-top:50px;
+    min-width:200px;
+    width:25%;
+    border-right: 1px solid lightgray;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+#links {
+    display:flex;
+    flex-direction: column;
+    background-color: green;
+}
+.link {
+    flex:1;
+    text-align: left;
+    font-size:16px;
+    font-weight:lighter;
+    text-transform: uppercase;
+    padding:10px 15px;
+    border:none;
+    background-color: #fff;
+    transition: all 0.1s ease;
+    border-bottom:1px solid lightgray;
+}
+
+.link:hover {
+    background-color: lightgrey;
+    cursor:pointer;
+}
+
+#add-list {
+    text-align: left;
+    font-size:16px;
+    font-weight:normal;
+    text-transform: uppercase;
+    padding:10px 15px;
+    width:100%;
+    border:none;
+    background-color: #fff;
+    transition: all 0.1s ease;
+    border-top:1px solid lightgray;
+}
+#add-list:hover {
+    background-color: lightgray;
+    cursor:pointer;
+}
+
+/* LIST */
+.list {
+    flex:1;
+    padding:50px 25px;
+}
+
+.list-title {
+    text-align: center;
+    margin-bottom:15px;
+    font-weight:normal;
+    text-transform: uppercase;
+}
+.list-description {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom:15px;
+    align-items: center;
+}
+.list-btns {
+    display:flex;
+    gap:15px;
+}
+.list-btns button {
+    font-size:16px;
+    font-weight:normal;
+    text-transform: uppercase;
+    padding:10px 15px;
+    border:none;
+    background-color: #fff;
+    transition: all 0.1s ease;
+    border:1px solid lightgray;
+}
+.list-btns button:hover {
+    cursor: pointer;
+    background-color: lightgray;
+}
+
+/* ITEMS */
+.item {
+    background-color: white;
+    display:flex;
+    align-items: center;
+    border-bottom: 1px solid lightgray;
+    padding:10px 15px 10px 10px;
+    transition:0.1s all ease;
+    justify-content: space-between;
+}
+.item:hover {
+    cursor:pointer;
+    background-color: lightgray;
+}
+.item-title {
+    font-size:16px;
+    font-weight:normal;
+}
+.complete {
+    width:15px;
+    height:15px;
+    background-color: lightgray;
+    border:1px solid lightgray;
+    transition: 0.1s ease all;
+}
+.incomplete {
+    width:15px;
+    height:15px;
+    background-color: white;
+    border:1px solid lightgray;
+}
+.item:hover > .complete {
+    border:1px solid white;
+}
+
+.delete-item {
+    opacity:0;
+    border:none;
+    color:white;
+    font-weight: lighter;
+    background-color: transparent;
+    transition: all 0.1s ease;
+}
+
+.delete-item:hover {
+    cursor: pointer;
+    color:black;
+}
+.delete-item i { 
+    font-size:16px;
+}
+.item:hover > .delete-item {
+    opacity:1;
+}
+
+/* FORM */
+.form-container {
+    background: rgba(255,255,255,0.75);
+    height:100vh;
+    width:100vw;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    position:absolute;
+}
+
+.form {
+    display:flex;
+    flex-direction: column;
+    position:absolute;
+    background-color: #fff;
+    border:1px solid lightgray;
+    padding:15px;
+}
+
+.header {
+    text-align: center;
+    text-transform: uppercase;
+    font-size:32px;
+    font-weight:normal;
+    margin-bottom:15px;
+}
+
+.form-input-label {
+    font-size:16px;
+    text-transform: uppercase;
+}
+.form-input {
+    outline:none;
+    border:1px solid lightgray;
+    font:inherit;
+    padding:10px 15px;
+    margin:5px 0 15px 0;
+}
+
+.form-btns {
+    display:flex;
+    gap:15px;
+}
+
+.form-submit, .form-cancel {
+    flex:1;
+    font-size:16px;
+    font-weight:normal;
+    text-transform: uppercase;
+    padding:10px 15px;
+    border:none;
+    background-color: #fff;
+    transition: all 0.1s ease;
+    border:1px solid lightgray;
+}
+
+.form-cancel {
+    font-weight:lighter;
+}
+
+.form-submit:hover, .form-cancel:hover {
+    background-color: lightgray;
+    cursor:pointer;
+}
